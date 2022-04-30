@@ -1,0 +1,28 @@
+{% extends "./structure.html" %}
+{% block titulo %}
+Agregar Producto
+{% endblock %}
+{% block contenido %}
+<div class="container">
+    <section class="section">
+        <div class="columns">
+            <div class="column is-one-third">
+                <h3 class="is-size-3">Agregar Producto</h3>
+                <form action="{{url_for('agregarProducto')}}" method="post">
+                    <label for="nombre">Nombre:</label>
+                    <input required type="text" class="form-control" placeholder="Nombre" name="nombre" id="nombre">
+                    <label for="precio">Precio</label>
+                    <input required type="number" class="form-control" placeholder="Precio" name="precio" id="precio">
+                    <label for="stock">Stock</label>
+                    <input required type="number" class="form-control" placeholder="Stock" name="stock" id="stock">
+                    <label for="categoria">Categoria</label>
+                    <input required type="text" class="form-control" placeholder="Categoria" name="categoria" id="categoria">
+                    <br>
+                    <button type="submit" class="btn btn-success">Guardar</button>
+                    <a href="{{url_for('productos')}}" class="btn btn-primary">Volver</a>
+                </form>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}
